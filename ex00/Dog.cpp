@@ -9,7 +9,7 @@ _type("Dog")
 	return ;
 }
 
-Dog::Dog(const Dog& other) : Animal(other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
 	this->_type = other._type;
 
@@ -18,7 +18,7 @@ Dog::Dog(const Dog& other) : Animal(other)
 	return ;
 }
 
-Dog &Dog::operator=(const Dog& source)
+Dog &Dog::operator=(const Dog &source)
 {
 	if (this == &source)
 		this->_type = source._type;
@@ -39,4 +39,9 @@ void Dog::makeSound(void) const
 				<< " goes Ruf Ruf!"
 				<< std::endl;
 	return ;
+}
+
+std::string	&Dog::get_type(void)
+{
+	return (this->_type);
 }

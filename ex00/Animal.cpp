@@ -38,3 +38,8 @@ void Animal::makeSound(void) const
 				<< std::endl;
 	return ;
 }
+
+std::string	&Animal::get_type(void)
+{
+	return (this->_type);
+}
