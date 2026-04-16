@@ -1,31 +1,31 @@
-#include "Dog.hpp"
+#include "Cat.hpp"
 #include "iostream"
 
-Dog::Dog() : Animal (),
-_type("Generic Dog")
+Cat::Cat() : Animal (),
+_type("Generic Cat")
 {
-	std::cout	<< "A Dog is created!"
+	std::cout	<< "A Cat is created!"
 				<< std::endl;
 	return ;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
 	this->_type = other._type;
 
-	std::cout	<< "copy of a dog was created!"
+	std::cout	<< "copy of a Cat was created!"
 				<< std::endl;
 	return ;
 }
 
-Dog &Dog::operator=(const Dog &source)
+Cat &Cat::operator=(const Cat &source)
 {
 	if (this == &source)
 		this->_type = source._type;
 	return (*this);
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
 	std::cout	<< this->_type
 				<< " has died.."
@@ -33,15 +33,15 @@ Dog::~Dog()
 	return ;
 }
 
-void Dog::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	std::cout	<< this->_type
-				<< " goes Ruf Ruf!"
+				<< " goes MEeeeaaww!"
 				<< std::endl;
 	return ;
 }
 
-std::string	Dog::getType(void) const
+std::string	Cat::getType(void) const
 {
 	return (this->_type);
 }

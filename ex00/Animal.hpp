@@ -10,10 +10,12 @@ class	Animal
 		Animal(const Animal &other);
 		virtual ~Animal();
 
+		// operator overload
 		Animal &operator=(const Animal &other);
 
-		virtual std::string	&get_type ();
-		virtual void	makeSound(void) const;
+		// member functions
+		virtual std::string	getType () const;
+		virtual void		makeSound(void) const;
 
 	protected:
 		std::string _type;

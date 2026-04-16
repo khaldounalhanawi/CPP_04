@@ -1,9 +1,11 @@
 NAME = Animals
 CC = c++
-HEADER =	Animal.hpp \
-			Dog.hpp
+HEADER = Animal.hpp \
+		Cat.hpp \
+		Dog.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =	Animal.cpp \
+SRCS = Animal.cpp \
+		Cat.cpp \
 		Dog.cpp \
 		main.cpp
 

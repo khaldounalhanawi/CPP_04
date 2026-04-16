@@ -1,17 +1,17 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include "Animal.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 	public:
-		Dog ();
-		Dog (Dog const &copy);
-		~Dog ();
+		Cat ();
+		Cat (Cat const &copy);
+		~Cat ();
 		
 		// operator overload
-		Dog &operator=(Dog const &source);
+		Cat &operator=(Cat const &source);
 
 		// member functions
 		std::string	getType(void) const;
