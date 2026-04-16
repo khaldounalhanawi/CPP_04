@@ -1,6 +1,8 @@
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
 // int	main()
@@ -53,6 +55,7 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	const WrongAnimal* FAKE = new WrongCat();
 
 	std::cout	<< "\n>>>>>>>> Type check! <<<<<<<<<<"
 				<< std::endl;
@@ -67,6 +70,7 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	FAKE->makeSound ();
 
 	std::cout	<< "\n>>>>>>>> end of the world! <<<<<<<<<"
 				<< std::endl;
@@ -74,5 +78,6 @@ int main()
 	delete i;
 	delete j;
 	delete meta;
+	delete FAKE;
 	return 0;
 }
