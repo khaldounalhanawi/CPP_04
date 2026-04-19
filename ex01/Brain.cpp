@@ -1,4 +1,5 @@
 #include "Brain.hpp"
+#include <iostream>
 
 Brain::Brain()
 {
@@ -42,10 +43,18 @@ Brain& Brain::operator=(const Brain& source)
 
 const std::string	&Brain::getIdea(int index) const
 {
+	// error handling if out of bounds
+	if (index < 0 || index > 99)
+		throw std::out_of_range ("Idea index must be >= 0 and < 100");
+	// return string array element at index
 	return (this->_ideas[index]);
 }
 
 void	Brain::setIdea(int index, std::string content)
 {
+	// error handling if out of bounds
+	if (index < 0 || index > 99)
+		throw std::out_of_range ("Idea index must be >= 0 and < 100");
+	// override content at index
 	this->_ideas[index] = content;
 }
