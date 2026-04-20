@@ -17,7 +17,7 @@ int main()
 		a.setIdea(1, "Mama mia");
 		a.setIdea(0, "hola cola");
 		a.setIdea(3, "falafel");
-		// a.setIdea(-1, "burger");
+		a.setIdea(-1, "burger");
 		// a.setIdea(99, "halloumi");
 	}
 	catch (const std::exception &e)
