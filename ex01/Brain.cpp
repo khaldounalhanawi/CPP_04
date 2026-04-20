@@ -3,12 +3,17 @@
 
 Brain::Brain()
 {
+	std::cout	<< "\tNew Brain has been created!"
+				<< std::endl;
 	return ;
 }
 
 Brain::Brain(const Brain& other)
 {
 	int	i;
+
+	std::cout	<< "\tNew Brain has been created via Copy!"
+				<< std::endl;
 
 	i = 0;
 	while (i < 100)
@@ -21,12 +26,17 @@ Brain::Brain(const Brain& other)
 
 Brain::~Brain()
 {
+	std::cout	<< "A Brain has been DELETED!"
+				<< std::endl;
 	return ;
 }
 
 Brain& Brain::operator=(const Brain& source)
 {
 	int	i;
+
+	std::cout	<< "Brain equals another brain!"
+				<< std::endl;
 
 	if (&this->_ideas[0] == &(source.getIdea(0)))
 		return (*this);
