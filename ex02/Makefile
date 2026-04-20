@@ -1,0 +1,36 @@
+NAME = Animals
+CC = c++
+HEADER = Animal.hpp \
+		Cat.hpp \
+		Dog.hpp \
+		WrongAnimal.hpp \
+		WrongCat.hpp \
+		Brain.hpp
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
+		main.cpp \
+		Brain.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp $(HEADER)
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
