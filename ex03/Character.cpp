@@ -84,3 +84,37 @@ const AMateria	*Character::getInventoryItem(int index) const
 	else
 		return (NULL);
 }
+
+void Character::equip(AMateria* m)
+{
+	int		i = 0;
+
+	while (i < 4)
+	{
+		if (!this->inventory[i])
+		{
+			this->inventory[i] = m->clone ();
+			std::cout	<< this->_name
+						<< " has gained "
+						<< m->getType ()
+						<< std::endl;
+			break;
+		}
+		i ++;
+	}
+	return ;
+}
+
+void	Character::printInventory() const
+{
+	std::cout	<< this->_name << " inventory:\n";
+
+	for (int i = 0; i < 4; i ++)
+	{
+		if (this->inventory[i])
+		{
+			std::cout	<< this->inventory[i]->getType ()
+						<< std::endl;
+		}
+	}
+}

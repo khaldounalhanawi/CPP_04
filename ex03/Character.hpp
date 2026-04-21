@@ -17,12 +17,15 @@ class Character : public ICharacter
 
 		// Interface functions
 		std::string const & getName() const;
-		// void equip(AMateria* m);
+		void equip(AMateria* m);
 		// void unequip(int idx);
 		// void use(int idx, ICharacter& target);
 
 		// Getters & setters
 		const AMateria	*getInventoryItem(int index) const;
+
+		// testers
+		void	printInventory() const;
 
 	private:
 		std::string	_name;

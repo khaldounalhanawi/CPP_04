@@ -76,16 +76,52 @@
 // }
 
 // Character tests
+// int main()
+// {
+// 	Character a("Khaldoun");
+// 	Character b(a);
+// 	Character c("Somebody");
+// 	ICharacter *d = new Character ("falafel");
+
+// 	a = c;
+
+// 	delete d;
+
+// 	return (0);
+// }
+
+// Character functions tests
 int main()
 {
 	Character a("Khaldoun");
 	Character b(a);
-	Character c("Somebody");
+	Character c("John");
 	ICharacter *d = new Character ("falafel");
+	Ice		*first = new Ice ();
+	Cure	*second = new Cure ();
 
 	a = c;
 
+	std::cout	<< "******** equip() tests\n\n";
+	a.equip(first);
+	a.equip(second);
+
+	b.equip(first);
+	b.equip(first);
+	b.equip(first);
+	b.equip(first);
+	b.equip(second);
+
+	std::cout	<< "**************************\n";
+
+	a.printInventory ();
+	std::cout	<< "**************************\n";
+	b.printInventory ();
+
+
 	delete d;
+	delete first;
+	delete second;
 
 	return (0);
 }
