@@ -94,10 +94,12 @@ void Character::equip(AMateria* m)
 		if (!this->inventory[i])
 		{
 			this->inventory[i] = m->clone ();
+
 			std::cout	<< this->_name
 						<< " has gained "
 						<< m->getType ()
 						<< std::endl;
+
 			break;
 		}
 		i ++;
@@ -117,4 +119,11 @@ void	Character::printInventory() const
 						<< std::endl;
 		}
 	}
+}
+
+void Character::unequip(int idx)
+{
+	if (this->inventory[idx])
+		this->inventory[idx] = NULL;
+	return ;
 }

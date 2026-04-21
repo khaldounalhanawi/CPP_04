@@ -90,38 +90,65 @@
 // 	return (0);
 // }
 
-// Character functions tests
+// // Character functions tests
+// int main()
+// {
+// 	Character a("Khaldoun");
+// 	Character b(a);
+// 	Character c("John");
+// 	ICharacter *d = new Character ("falafel");
+// 	Ice		*first = new Ice ();
+// 	Cure	*second = new Cure ();
+
+// 	a = c;
+
+// 	std::cout	<< "******** equip() tests\n\n";
+// 	a.equip(first);
+// 	a.equip(second);
+
+// 	b.equip(first);
+// 	b.equip(first);
+// 	b.equip(first);
+// 	b.equip(first);
+// 	b.equip(second);
+
+// 	std::cout	<< "**************************\n";
+
+// 	a.printInventory ();
+// 	std::cout	<< "**************************\n";
+// 	b.printInventory ();
+
+
+// 	delete d;
+// 	delete first;
+// 	delete second;
+
+// 	return (0);
+// }
+
+// Character unequip tests
 int main()
 {
 	Character a("Khaldoun");
-	Character b(a);
-	Character c("John");
-	ICharacter *d = new Character ("falafel");
-	Ice		*first = new Ice ();
-	Cure	*second = new Cure ();
+	AMateria	*m1 = new Ice ();
+	Cure m2;
 
-	a = c;
+	a.equip (m1);
+	a.equip (m1);
+	a.equip (&m2);
+	a.equip (m1);
 
-	std::cout	<< "******** equip() tests\n\n";
-	a.equip(first);
-	a.equip(second);
+	std::cout	<< "**************************\n";
 
-	b.equip(first);
-	b.equip(first);
-	b.equip(first);
-	b.equip(first);
-	b.equip(second);
+	a.unequip (0);
+	a.unequip (3);
 
 	std::cout	<< "**************************\n";
 
 	a.printInventory ();
+
 	std::cout	<< "**************************\n";
-	b.printInventory ();
 
-
-	delete d;
-	delete first;
-	delete second;
-
+	delete m1;
 	return (0);
 }
