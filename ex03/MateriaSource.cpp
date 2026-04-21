@@ -62,6 +62,8 @@ void	MateriaSource::learnMateria(AMateria* source)
 		delete this->_MateriaArray[_indexCounter];
 	// clone to index
 	this->_MateriaArray[_indexCounter] = source->clone ();
+	// delete source??
+	delete source;
 
 	std::cout	<< "Materia learned and assign to slot "<< _indexCounter << "..\n" << std::endl;
 	// Incriment index value

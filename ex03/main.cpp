@@ -127,28 +127,57 @@
 // }
 
 // Character unequip tests
+// int main()
+// {
+// 	Character a("Khaldoun");
+// 	AMateria	*m1 = new Ice ();
+// 	Cure m2;
+
+// 	a.equip (m1);
+// 	a.equip (m1);
+// 	a.equip (&m2);
+// 	a.equip (m1);
+
+// 	std::cout	<< "**************************\n";
+
+// 	a.unequip (0);
+// 	a.unequip (3);
+
+// 	std::cout	<< "**************************\n";
+
+// 	a.printInventory ();
+
+// 	std::cout	<< "**************************\n";
+
+// 	delete m1;
+// 	return (0);
+// }
+
+
 int main()
 {
-	Character a("Khaldoun");
-	AMateria	*m1 = new Ice ();
-	Cure m2;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
 
-	a.equip (m1);
-	a.equip (m1);
-	a.equip (&m2);
-	a.equip (m1);
-
-	std::cout	<< "**************************\n";
-
-	a.unequip (0);
-	a.unequip (3);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
 
 	std::cout	<< "**************************\n";
 
-	a.printInventory ();
-
+	me->use(0, *bob);
+	me->use(1, *bob);
 	std::cout	<< "**************************\n";
 
-	delete m1;
+	delete bob;
+	delete me;
+	delete src;
 	return (0);
 }
+
+// does equip need to delete the old materia it picks??

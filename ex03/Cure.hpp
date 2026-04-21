@@ -19,7 +19,7 @@ class Cure : public AMateria
 
 		// Member functions
 		AMateria	*clone() const;
-		// void		use(ICharacter& target);
+		void		use(ICharacter& target);
 
 	private:
 		std::string	_type;

@@ -100,6 +100,8 @@ void Character::equip(AMateria* m)
 						<< m->getType ()
 						<< std::endl;
 
+			delete m;
+
 			break;
 		}
 		i ++;
@@ -126,4 +128,11 @@ void Character::unequip(int idx)
 	if (this->inventory[idx])
 		this->inventory[idx] = NULL;
 	return ;
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+	if (!this->inventory[idx])
+		return ;
+	this->inventory[idx]->use (target);
 }
