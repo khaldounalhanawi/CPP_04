@@ -1,14 +1,18 @@
-NAME = Materia
+NAME = Materias
 CC = c++
 HEADER = AMateria.hpp \
+		Character.hpp \
+		Cure.hpp \
 		ICharacter.hpp \
+		IMateriaSource.hpp \
 		Ice.hpp \
-		Cure.hpp
+		MateriaSource.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = AMateria.cpp \
+		Cure.cpp \
 		Ice.cpp \
-		main.cpp \
-		Cure.cpp
+		MateriaSource.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

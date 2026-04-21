@@ -17,12 +17,13 @@ class MateriaSource : public IMateriaSource
 		// Setters & Getters
 
 		// Interface
-		void		learnMateria(AMateria*);
-		AMateria	*createMateria(std::string const & type);
+		void		learnMateria(AMateria* source);
+		// AMateria	*createMateria(std::string const & type);
 
 	private:
 		AMateria	*_MateriaArray[4];
-		
+		int			_indexCounter;
+
 };
 
 #endif
