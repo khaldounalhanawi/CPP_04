@@ -53,6 +53,7 @@ int	main()
 
 	*c = src;
 
+
 	std::cout	<< "******** Learn() tests\n\n";
 
 	src.learnMateria (a1);
@@ -64,6 +65,8 @@ int	main()
 
 	std::cout	<< "**************************\n";
 
+	src.createMateria ("cure");
+	src.createMateria ("NOTHING");
 
 	delete c;
 	delete a1;

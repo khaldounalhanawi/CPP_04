@@ -67,3 +67,15 @@ void	MateriaSource::learnMateria(AMateria* source)
 	// Incriment index value
 	_indexCounter ++;
 }
+
+AMateria	*MateriaSource::createMateria(std::string const & type)
+{
+	for (int i = 0; i < 4; i ++)
+	{
+		if (this->_MateriaArray[i] && this->_MateriaArray[i]->getType() == type)
+			return (this->_MateriaArray[i]->clone ());
+	}
+
+	std::cout	<< "No Match found to create Materia "<< type <<"..\n" << std::endl;
+	return (0);
+}

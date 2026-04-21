@@ -3,16 +3,16 @@
 
 
 Cure::Cure():
-AMateria("Cure"),
-_type("Cure")
+AMateria("cure"),
+_type("cure")
 {
 	std::cout	<< "Cure has been created!\n" << std::endl;
 	return ;
 }
 
 Cure::Cure(const Cure& other):
-AMateria ("Cure"),
-_type("Cure")
+AMateria ("cure"),
+_type("cure")
 {
 	this->_name = other.getName ();
 	std::cout	<< "Cure is created from a copy\n" << std::endl;

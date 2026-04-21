@@ -18,7 +18,7 @@ class MateriaSource : public IMateriaSource
 
 		// Interface
 		void		learnMateria(AMateria* source);
-		// AMateria	*createMateria(std::string const & type);
+		AMateria	*createMateria(std::string const & type);
 
 	private:
 		AMateria	*_MateriaArray[4];
