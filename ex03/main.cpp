@@ -3,6 +3,7 @@
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 
 // AMateria tests
@@ -40,36 +41,51 @@
 // }
 
 // MateriaSource tests
-int	main()
+// int	main()
+// {
+// 	AMateria		*a1 = new Ice();
+// 	AMateria		*b1 = new Cure();
+// 	Ice	aa;
+// 	Ice bb;
+// 	Cure zz;
+// 	MateriaSource	src;
+// 	MateriaSource	b(src);
+// 	MateriaSource	*c = new MateriaSource;
+
+// 	*c = src;
+
+
+// 	std::cout	<< "******** Learn() tests\n\n";
+
+// 	src.learnMateria (a1);
+// 	src.learnMateria (b1);
+// 	src.learnMateria (&aa);
+// 	src.learnMateria (&bb);
+// 	src.learnMateria (&zz);
+// 	src.learnMateria (&aa);
+
+// 	std::cout	<< "**************************\n";
+
+// 	src.createMateria ("cure");
+// 	src.createMateria ("NOTHING");
+
+// 	delete c;
+// 	delete a1;
+// 	delete b1;
+// 	return (0);
+// }
+
+// Character tests
+int main()
 {
-	AMateria		*a1 = new Ice();
-	AMateria		*b1 = new Cure();
-	Ice	aa;
-	Ice bb;
-	Cure zz;
-	MateriaSource	src;
-	MateriaSource	b(src);
-	MateriaSource	*c = new MateriaSource;
+	Character a("Khaldoun");
+	Character b(a);
+	Character c("Somebody");
+	ICharacter *d = new Character ("falafel");
 
-	*c = src;
+	a = c;
 
+	delete d;
 
-	std::cout	<< "******** Learn() tests\n\n";
-
-	src.learnMateria (a1);
-	src.learnMateria (b1);
-	src.learnMateria (&aa);
-	src.learnMateria (&bb);
-	src.learnMateria (&zz);
-	src.learnMateria (&aa);
-
-	std::cout	<< "**************************\n";
-
-	src.createMateria ("cure");
-	src.createMateria ("NOTHING");
-
-	delete c;
-	delete a1;
-	delete b1;
 	return (0);
 }

@@ -1,4 +1,4 @@
-NAME = Materias
+NAME = game
 CC = c++
 HEADER = AMateria.hpp \
 		Character.hpp \
@@ -9,6 +9,7 @@ HEADER = AMateria.hpp \
 		MateriaSource.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = AMateria.cpp \
+		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
 		MateriaSource.cpp \

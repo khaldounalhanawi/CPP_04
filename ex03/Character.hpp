@@ -3,21 +3,31 @@
 
 # include <string>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class AMateria;
 
 class Character : public ICharacter
 {
 	public:
-		virtual ~Character();
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Character(std::string name);
+		Character(const Character& other);
+		~Character();
+
+		Character &operator=(const Character& source);
+
+		// Interface functions
+		std::string const & getName() const;
+		// void equip(AMateria* m);
+		// void unequip(int idx);
+		// void use(int idx, ICharacter& target);
+
+		// Getters & setters
+		const AMateria	*getInventoryItem(int index) const;
 
 	private:
 		std::string	_name;
-		
+		AMateria	*inventory[4];
+
 };
 
 #endif
