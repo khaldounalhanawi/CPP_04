@@ -154,30 +154,64 @@
 // }
 
 
-int main()
+// int main()
+// {
+// 	IMateriaSource* src = new MateriaSource();
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());
+// 	ICharacter* me = new Character("me");
+// 	AMateria* tmp;
+
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	ICharacter* bob = new Character("bob");
+
+// 	std::cout	<< "**************************\n";
+
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
+// 	std::cout	<< "**************************\n";
+
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+// 	return (0);
+// }
+
+
+int	main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
+	ICharacter	*a = new Character ("john");
+	ICharacter	*b = new Character ("salma");
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
+	AMateria	*cold = new Ice;
+	AMateria	*warm = new Cure;
+	
+	IMateriaSource	*source = new MateriaSource;
+
+	std::cout	<< "***********learning**************************\n";
+
+	source->learnMateria (cold);
+	source->learnMateria (warm);
+
+	std::cout	<< "***********creates**************************\n";
+
+	AMateria *m1 = source->createMateria ("ice");
+	AMateria *m2 = source->createMateria ("cure");
+	AMateria *m3 = source->createMateria ("smthng");
 
 	std::cout	<< "**************************\n";
 
-	me->use(0, *bob);
-	me->use(1, *bob);
-	std::cout	<< "**************************\n";
+	// (void) m3;
+	delete m1;
+	delete m2;
+	delete m3;
 
-	delete bob;
-	delete me;
-	delete src;
+	delete a;
+	delete b;
+	delete source;
+
 	return (0);
 }
-
-// does equip need to delete the old materia it picks??
